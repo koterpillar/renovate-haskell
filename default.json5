@@ -7,18 +7,18 @@
         '{"releases": $map($filter($keys(), function($v) { $lookup($, $v) = "normal" }), function($v) { {"version": $v} })}',
       ],
     },
-    stackage-lts: {
+    "stackage-lts": {
       defaultRegistryUrlTemplate: "https://www.stackage.org/download/snapshots.json",
       transformTemplates: [
         '{"releases": $map($filter($keys(), function($v) { $contains($v, /^lts-/) } ), function($v) { {"version": $replace($lookup($, $v), /^lts-/, "") } } ) }',
       ],
-    }
+    },
   },
   customManagers: [
     {
       customType: "regex",
       fileMatch: "^stack.yaml$",
-      matchStrings: ['^resolver: lts-(?<currentValue>[0-9.]+)$'],
+      matchStrings: ["^resolver: lts-(?<currentValue>[0-9.]+)$"],
       datasourceTemplate: "custom.stackage-lts",
       depNameTemplate: "lts",
     },
