@@ -14,4 +14,13 @@
       ],
     }
   },
+  customManagers: [
+    {
+      customType: "regex",
+      fileMatch: "^stack.yaml$",
+      matchStrings: ['^resolver: lts-(?<currentValue>[0-9.]+)$'],
+      datasourceTemplate: "custom.stackage-lts",
+      depNameTemplate: "lts",
+    },
+  ],
 }
