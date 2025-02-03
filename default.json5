@@ -1,12 +1,6 @@
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
   customDatasources: {
-    hackage: {
-      defaultRegistryUrlTemplate: "https://hackage.haskell.org/package/{{packageName}}",
-      transformTemplates: [
-        '{"releases": $map($filter($keys(), function($v) { $lookup($, $v) = "normal" }), function($v) { {"version": $v} })}',
-      ],
-    },
     "stackage-lts": {
       defaultRegistryUrlTemplate: "https://www.stackage.org/download/snapshots.json",
       transformTemplates: [
