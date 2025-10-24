@@ -7,6 +7,12 @@
         '{"releases": $map($filter($keys(), function($v) { $contains($v, /^lts-/) } ), function($v) { {"version": $replace($lookup($, $v), /^lts-/, "") } } ) }',
       ],
     },
+    "ghc": {
+      defaultRegistryUrlTemplate: "https://endoflife.date/api/ghc.json",
+      transformTemplates: [
+        '{"releases": $map($, function($v) { {"version": $v.cycle, "releaseDate": $v.releaseDate, "isDeprecated": $v.eol} })}',
+      ],
+    },
   },
   customManagers: [
     {
