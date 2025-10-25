@@ -23,5 +23,15 @@
       depNameTemplate: "lts",
       depTypeTemplate: "dependencies",
     },
+    {
+      customType: "regex",
+      fileMatch: ["^\\.github/workflows/.*\\.ya?ml$"],
+      matchStrings: [
+        "ghc-version:\\s+[\"']?(?<currentValue>[0-9.]+)[\"']?",
+      ],
+      datasourceTemplate: "custom.ghc",
+      depNameTemplate: "ghc",
+      depTypeTemplate: "github-actions",
+    },
   ],
 }
