@@ -11,7 +11,7 @@
   customManagers: [
     {
       customType: "regex",
-      fileMatch: "^stack.yaml$",
+      managerFilePatterns: ["^stack.yaml$"],
       matchStrings: ["^resolver: lts-(?<currentValue>[0-9.]+)\\n"],
       datasourceTemplate: "custom.stackage-lts",
       depNameTemplate: "lts",
