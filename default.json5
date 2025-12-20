@@ -24,6 +24,7 @@
       datasourceTemplate: "endoflife-date",
       depNameTemplate: "ghc",
       depTypeTemplate: "github-actions",
+      versioningTemplate: "loose",
     },
   ],
 }
