@@ -19,7 +19,7 @@
     },
     {
       customType: "regex",
-      managerFilePatterns: [".github/workflows/.*.ya?ml"],
+      managerFilePatterns: [".github/workflows/.*.y*ml"],
       matchStrings: ["ghc-version:\\s+[\"']?(?<currentValue>[0-9.]+)[\"']?"],
       datasourceTemplate: "endoflife-date",
       depNameTemplate: "ghc",
